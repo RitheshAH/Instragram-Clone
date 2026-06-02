@@ -4,16 +4,187 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Instagram Clone</title>
+    <!-- BS styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- BS icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
+
 <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <container class="body">
+
+        <header>
+            <nav class="navbar bg-body-tertiary border-bottom fixed-top">
+                <div class="container-fluid d-flex justify-content-between align-items-center">
+
+                    <!-- Left icon -->
+                    <a class="navbar-brand m-0" href="#">
+                        <i class="bi bi-plus-lg fs-4"></i>
+                    </a>
+
+                    <!-- center -->
+                    <a href="#" class="nav-link p-0">
+                        <img src="assets/images/instragram.png" alt="Instagram Logo" width="120">
+                    </a>
+
+                    <!-- Right icon -->
+                    <div class="navbar-nav">
+                        <a class="nav-link p-0" href="#">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Story -->
+            <div class="story bar">
+                <!-- STORY BAR -->
+                <div class="container pt-5">
+                    <div class="story-wrapper d-flex gap-3 py-2 border-bottom overflow-auto">
+
+                        <!-- Story Item -->
+                        <div class="text-center">
+                            <div class="story-circle">
+                                <img src="https://i.pravatar.cc/100?img=1" class="rounded-circle" width="60"
+                                    height="60">
+                            </div>
+                            <small>Your Story</small>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="story-circle">
+                                <img src="https://i.pravatar.cc/100?img=2" class="rounded-circle" width="60"
+                                    height="60">
+                            </div>
+                            <small>user2</small>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="story-circle">
+                                <img src="https://i.pravatar.cc/100?img=3" class="rounded-circle" width="60"
+                                    height="60">
+                            </div>
+                            <small>user3</small>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="story-circle">
+                                <img src="https://i.pravatar.cc/100?img=4" class="rounded-circle" width="60"
+                                    height="60">
+                            </div>
+                            <small>user4</small>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="story-circle">
+                                <img src="https://i.pravatar.cc/100?img=5" class="rounded-circle" width="60"
+                                    height="60">
+                            </div>
+                            <small>user5</small>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="story-circle">
+                                <img src="https://i.pravatar.cc/100?img=5" class="rounded-circle" width="60"
+                                    height="60">
+                            </div>
+                            <small>user5</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of Story -->
+
+            <!-- posts and reels -->
+            <div class="post">
+                <div class="container">
+                    <div class="post-wrapper d-flex flex-column gap-4">
+
+                        <!-- Post Item -->
+                        <div class="card">
+                            <div class="card-header d-flex align-items-center gap-2">
+                                <img src="https://i.pravatar.cc/100?img=1" class="rounded-circle" width="30"
+                                    height="30">
+                                <strong>User1</strong>
+                            </div>
+                            <img src="https://picsum.photos/500/300?random=1" class="card-img-top" alt="Post Image">
+                        </div>
+
+                        <!-- Post Item -->
+                        <div class="card">
+                            <div class="card-header d-flex align-items-center gap-2">
+                                <img src="https://i.pravatar.cc/100?img=2" class="rounded-circle" width="30"
+                                    height="30">
+                                <strong>User2</strong>
+                            </div>
+                            <img src="https://picsum.photos/500/300?random=2" class="card-img-top" alt="Post Image">
+                        </div>
+
+                    </div>
+                </div>
+
+
+        </main>
+
+        <footer>
+            <nav class="navbar bg-light border-top fixed-bottom">
+                <div class="container-fluid">
+
+                    <ul class="navbar-nav d-flex flex-row justify-content-around w-100 m-0 p-0">
+
+                        <li class="nav-item text-center">
+                            <a href="#" class="nav-link p-0">
+                                <i class="bi bi-house-door-fill fs-4"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item text-center">
+                            <a href="#" class="nav-link p-0">
+                                <i class="bi bi-play-btn fs-4"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item text-center">
+                            <a href="#" class="nav-link p-0">
+                                <i class="bi bi-send fs-5"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item text-center">
+                            <a href="#" class="nav-link p-0">
+                                <i class="bi bi-search fs-4"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item text-center">
+                            <a href="#" class="nav-link p-0">
+                                <i class="bi bi-person-circle fs-4"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+        </footer>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+
+    </container>
+
 </body>
+
 
 </html>

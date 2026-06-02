@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header>.navbar {
+    height: 50px;
+    width: 100%;
+}
+
+.story-wrapper {
+    overflow-X: auto;
+    display: flex;
+
+}
+
+
+.story-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.card-header {
+    font-size: 10px;
+}
+
+.post-wrapper {
+    margin-top: 20px;
+    overflow-Y: scroll;
+    display: flex;
+
+}
+
+.post-wrapper::-webkit-scrollbar {
+    display: none;
+
+}
+
+     
