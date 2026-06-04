@@ -16,14 +16,14 @@
 
 
 <body>
-    <container class="body">
+    <div class="body">
 
         <header>
-            <nav class="navbar bg-body-tertiary border-bottom fixed-top">
-                <div class="container-fluid d-flex justify-content-between align-items-center">
+            <nav class="navbar">
+                <div class="container-fluid">
 
                     <!-- Left icon -->
-                    <a class="navbar-brand m-0" href="#">
+                    <a class="navbar-icon m-0" href="#">
                         <i class="bi bi-plus-lg fs-4"></i>
                     </a>
 
@@ -33,7 +33,7 @@
                     </a>
 
                     <!-- Right icon -->
-                    <div class="navbar-nav">
+                    <div class="navbar-icon">
                         <a class="nav-link p-0" href="#">
                             <i class="bi bi-heart"></i>
                         </a>
@@ -53,7 +53,7 @@
                         <!-- Story Item -->
                         <div class="text-center">
                             <div class="story-circle">
-                                <img src="https://i.pravatar.cc/100?img=1" class="rounded-circle" width="60"
+                                <img src="https://i.pravatar.cc/100?img=1" class="card-img-top post-image" width="60"
                                     height="60">
                             </div>
                             <small>Your Story</small>
@@ -61,7 +61,7 @@
 
                         <div class="text-center">
                             <div class="story-circle">
-                                <img src="https://i.pravatar.cc/100?img=2" class="rounded-circle" width="60"
+                                <img src="https://i.pravatar.cc/100?img=2" class="card-img-top post-image" width="60"
                                     height="60">
                             </div>
                             <small>user2</small>
@@ -69,7 +69,7 @@
 
                         <div class="text-center">
                             <div class="story-circle">
-                                <img src="https://i.pravatar.cc/100?img=3" class="rounded-circle" width="60"
+                                <img src="https://i.pravatar.cc/100?img=3" class="card-img-top post-image" width="60"
                                     height="60">
                             </div>
                             <small>user3</small>
@@ -77,7 +77,7 @@
 
                         <div class="text-center">
                             <div class="story-circle">
-                                <img src="https://i.pravatar.cc/100?img=4" class="rounded-circle" width="60"
+                                <img src="https://i.pravatar.cc/100?img=4" class="card-img-top post-image" width="60"
                                     height="60">
                             </div>
                             <small>user4</small>
@@ -85,7 +85,7 @@
 
                         <div class="text-center">
                             <div class="story-circle">
-                                <img src="https://i.pravatar.cc/100?img=5" class="rounded-circle" width="60"
+                                <img src="https://i.pravatar.cc/100?img=5" class="card-img-top post-image" width="60"
                                     height="60">
                             </div>
                             <small>user5</small>
@@ -93,7 +93,23 @@
 
                         <div class="text-center">
                             <div class="story-circle">
-                                <img src="https://i.pravatar.cc/100?img=5" class="rounded-circle" width="60"
+                                <img src="https://i.pravatar.cc/100?img=5" class="card-img-top post-image" width="60"
+                                    height="60">
+                            </div>
+                            <small>user5</small>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="story-circle">
+                                <img src="https://i.pravatar.cc/100?img=5" class="card-img-top post-image" width="60"
+                                    height="60">
+                            </div>
+                            <small>user5</small>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="story-circle">
+                                <img src="https://i.pravatar.cc/100?img=5" class="card-img-top post-image" width="60"
                                     height="60">
                             </div>
                             <small>user5</small>
@@ -114,8 +130,45 @@
                                 <img src="https://i.pravatar.cc/100?img=1" class="rounded-circle" width="30"
                                     height="30">
                                 <strong>User1</strong>
+                                <div class="post-header">
+                                    <button class="follow-btn">Follow</button>
+                                    <i class="bi bi-three-dots"></i>
+                                </div>
+
+
                             </div>
+
                             <img src="https://picsum.photos/500/300?random=1" class="card-img-top" alt="Post Image">
+                            <!-- Post Actions -->
+                            <div class="post-actions">
+
+                                <div class="left-actions">
+                                    <i class="bi bi-heart"></i>
+                                    <i class="bi bi-chat"></i>
+                                    <i class="bi bi-arrow-repeat"></i>
+                                    <i class="bi bi-send"></i>
+                                </div>
+
+                                <div class="right-actions">
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+
+                            </div>
+
+                            <!-- Likes -->
+                            <div class="post-likes">
+                                Liked by <strong>user123</strong> and <strong>2,345 others</strong>
+                            </div>
+
+                            <!-- Caption -->
+                            <div class="post-caption">
+                                <strong>User1</strong>
+                                Beautiful day 🌄
+                            </div>
+                            <!-- date -->
+                            <div class="post-caption">
+                                1 day ago
+                            </div>
                         </div>
 
                         <!-- Post Item -->
@@ -124,25 +177,111 @@
                                 <img src="https://i.pravatar.cc/100?img=2" class="rounded-circle" width="30"
                                     height="30">
                                 <strong>User2</strong>
+                                <div class="post-header">
+                                    <button class="follow-btn">Follow</button>
+                                    <i class="bi bi-three-dots"></i>
+                                </div>
                             </div>
                             <img src="https://picsum.photos/500/300?random=2" class="card-img-top" alt="Post Image">
-                        </div>
 
+                            <!-- Post Actions -->
+                            <div class="post-actions">
+
+                                <div class="left-actions">
+                                    <i class="bi bi-heart"></i>
+                                    <i class="bi bi-chat"></i>
+                                    <i class="bi bi-arrow-repeat"></i>
+                                    <i class="bi bi-send"></i>
+                                </div>
+
+                                <div class="right-actions">
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+
+                            </div>
+
+                            <!-- Likes -->
+                            <div class="post-likes">
+                                Liked by <strong>user123</strong> and <strong>2,345 others</strong>
+                            </div>
+
+                            <!-- Caption -->
+                            <div class="post-caption">
+                                <strong>User1</strong>
+                                Beautiful day 🌄
+                            </div>
+                            <!-- date -->
+                            <div class="post-caption">
+                                1 day ago
+                            </div>
+                        </div>
+                        <!-- postend -->
+
+                        <!-- Post Item -->
+                        <div class="card">
+                            <div class="card-header d-flex align-items-center gap-2">
+                                <img src="https://i.pravatar.cc/100?img=2" class="rounded-circle" width="30"
+                                    height="30">
+                                <strong>User2</strong>
+                                <div class="post-header">
+                                    <button class="follow-btn">Follow</button>
+                                    <i class="bi bi-three-dots"></i>
+                                </div>
+                            </div>
+                            <img src="https://picsum.photos/500/300?random=2" class="card-img-top" alt="Post Image">
+
+                            <!-- Post Actions -->
+                            <div class="post-actions">
+
+                                <div class="left-actions">
+                                    <i class="bi bi-heart"></i>
+                                    <i class="bi bi-chat"></i>
+                                    <i class="bi bi-arrow-repeat"></i>
+                                    <i class="bi bi-send"></i>
+                                </div>
+
+                                <div class="right-actions">
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+
+                            </div>
+
+                            <!-- Likes -->
+                            <div class="post-likes">
+                                Liked by <strong>user123</strong> and <strong>2,345 others</strong>
+                            </div>
+
+                            <!-- Caption -->
+                            <div class="post-caption">
+                                <strong>User1</strong>
+                                Beautiful day 🌄
+                            </div>
+
+                            <!-- date -->
+                            <div class="post-caption">
+                                1 day ago
+                            </div>
+                        </div>
+                        <!-- postend -->
                     </div>
+
+
                 </div>
+            </div>
 
 
         </main>
 
         <footer>
-            <nav class="navbar bg-light border-top fixed-bottom">
+            <nav class="navbar bg-light border-top custom-footer">
                 <div class="container-fluid">
 
                     <ul class="navbar-nav d-flex flex-row justify-content-around w-100 m-0 p-0">
 
-                        <li class="nav-item text-center">
+                        <li class="nav-it text-center">
                             <a href="#" class="nav-link p-0">
                                 <i class="bi bi-house-door-fill fs-4"></i>
+
                             </a>
                         </li>
 
@@ -182,7 +321,7 @@
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous"></script>
 
-    </container>
+    </div>
 
 </body>
 
