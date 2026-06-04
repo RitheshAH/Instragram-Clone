@@ -4,9 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --white: #fff;
+    --black: #000;
+    --border: #ddd;
+    --primary: #0095f6;
+}
+
 body {
-    margin: 0;
-    background: #000;
+    background: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,21 +20,23 @@ body {
 
 .body {
     width: 420px;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 10px);
     margin: 5px;
-    background: #fff;
+    background: var(--white);
     position: relative;
+    overflow: hidden;
 }
+
+/* HEADER */
 
 .navbar {
-    height: 90px;
+    height: 60px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
     z-index: 1000;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-
 }
 
-
+/* FOOTER */
 
 .custom-footer {
     position: absolute;
@@ -36,22 +44,19 @@ body {
     left: 0;
     right: 0;
     height: 60px;
+    background: var(--white);
+    border-top: 1px solid var(--border);
     z-index: 1000;
-    background: #fff;
-    border-top: 1px solid #ddd;
 }
 
-/* =========================
-   MAIN SCROLL AREA
-========================= */
+/* MAIN */
 
 main {
     position: absolute;
-    top: 56px;
-    bottom: 10px;
+    top: 60px;
+    bottom: 60px;
     left: 0;
     right: 0;
-
     overflow-y: auto;
 
     scrollbar-width: none;
@@ -62,16 +67,14 @@ main::-webkit-scrollbar {
     display: none;
 }
 
-/* =========================
-   STORIES
-========================= */
+/* STORIES */
 
 .story-wrapper {
     display: flex;
     gap: 15px;
-    overflow-x: auto;
     padding: 12px;
-    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border);
 
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -86,55 +89,48 @@ main::-webkit-scrollbar {
     height: 68px;
     padding: 3px;
     border-radius: 50%;
-    background: linear-gradient(45deg,
-            #feda75,
-            #fa7e1e,
-            #d62976,
-            #962fbf);
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf
+    );
 }
 
 .story-circle img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 2px solid var(--white);
     object-fit: cover;
 }
 
-/* =========================
-   POSTS
-========================= */
+/* POSTS */
 
 .card {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
+}
+
+.card-header {
+    background: var(--white);
 }
 
 .post-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-}
-
-.post-user {
+    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Post Image */
 .post-image {
     width: 100%;
     display: block;
     object-fit: cover;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4/5;
 }
 
-
-/* =========================
-   ACTIONS
-========================= */
+/* ACTIONS */
 
 .post-actions {
     display: flex;
@@ -157,9 +153,7 @@ main::-webkit-scrollbar {
     opacity: 0.7;
 }
 
-/* =========================
-   LIKES
-========================= */
+/* CONTENT */
 
 .post-likes {
     padding: 0 15px;
@@ -168,38 +162,39 @@ main::-webkit-scrollbar {
     margin-bottom: 6px;
 }
 
-/* =========================
-   CAPTION
-========================= */
-
 .post-caption {
     padding: 0 15px 15px;
     font-size: 14px;
     line-height: 1.5;
 }
 
-/* =========================
-   NAVBAR ICONS
-========================= */
+/* FOLLOW BUTTON */
 
-.nav-link {
-    color: #000;
+.follow-btn {
+    border: none;
+    background: var(--primary);
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
+/* NAV LINKS */
+
+.nav-link,
 .nav-link:hover {
-    color: #000;
+    color: var(--black);
 }
 
-/* =========================
-   TABLET
-========================= */
+/* TABLET */
 
 @media (max-width: 768px) {
 
     .body {
         width: 100%;
         height: 100vh;
-        border-radius: 0;
     }
 
     .story-circle {
@@ -217,20 +212,12 @@ main::-webkit-scrollbar {
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 480px) {
 
     body {
-        background: #fff;
-    }
-
-    .body {
-        width: 100%;
-        height: 100vh;
-        border-radius: 0;
+        background: var(--white);
     }
 
     .story-wrapper {
@@ -245,10 +232,6 @@ main::-webkit-scrollbar {
 
     .story-wrapper small {
         font-size: 11px;
-    }
-
-    .post-header {
-        padding: 10px;
     }
 
     .post-actions {
@@ -274,29 +257,4 @@ main::-webkit-scrollbar {
         padding-left: 10px;
         padding-right: 10px;
     }
-}
-
-
-main::-webkit-scrollbar {
-    display: none;
-}
-
-.follow-btn {
-    border: none;
-    background: #0095f6;
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    align-items: right;
-}
-
-
-.post-header {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
