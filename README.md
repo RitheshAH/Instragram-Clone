@@ -1,266 +1,173 @@
-# 📸 Instagram Clone
+# Instagram Clone
 
-A full-stack Instagram Clone built to replicate the core features of Instagram, including user authentication, post creation, likes, comments, user profiles, and real-time interactions.
+A simple Instagram-inspired front-end UI built using **HTML**, **CSS**, **Bootstrap 5**, and **Bootstrap Icons**.
 
-## 🚀 Features
+This project recreates the basic Instagram mobile interface including:
 
-### Authentication
+* Header navigation
+* Stories section
+* Feed posts
+* Like, comment, share, and save icons
+* Fixed bottom navigation bar
+* Responsive design for mobile and tablet devices
 
-* User registration and login
-* Secure password hashing
-* JWT-based authentication
-* Protected routes
+---
 
-### User Profiles
+## Features
 
-* Create and update profile information
-* Upload profile pictures
-* View user posts
-* Follow and unfollow users
+### Header
+
+* Instagram logo
+* Add post icon
+* Notifications icon
+
+### Stories
+
+* Horizontal scrollable story section
+* Instagram-style gradient story borders
+* User profile images
 
 ### Posts
 
-* Create posts with images and captions
-* Edit and delete posts
-* View feed from followed users
-* Responsive image gallery
+* User profile and username
+* Follow button
+* Post image
+* Like, comment, repost, and share actions
+* Save post option
+* Like count
+* Caption
+* Post date
 
-### Social Interactions
+### Footer Navigation
 
-* Like and unlike posts
-* Add and delete comments
-* Follow and unfollow users
-* Real-time updates
-
-### Search
-
-* Search users by username
-* Discover new accounts
+* Home
+* Reels
+* Messages
+* Search
+* Profile
 
 ### Responsive Design
 
-* Mobile-friendly interface
-* Tablet and desktop support
-* Modern Instagram-inspired UI
+* Mobile-friendly layout
+* Tablet support
+* Scrollable content area
+* Hidden scrollbars for a cleaner UI
 
 ---
 
-## 🛠️ Tech Stack
+## Technologies Used
 
-### Frontend
-
-* React.js
-* Redux / Context API
-* React Router
-* Axios
-* CSS / Tailwind CSS
-
-### Backend
-
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
-* Bcrypt
-
-### Storage & Deployment
-
-* Cloudinary (Image Storage)
-* Vercel / Netlify (Frontend)
-* Render / Railway (Backend)
-* MongoDB Atlas (Database)
+* HTML5
+* CSS3
+* Bootstrap 5.3
+* Bootstrap Icons
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-```bash
+```text
 instagram-clone/
-├── client/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   ├── context/
-│   │   ├── services/
-│   │   └── App.js
-│   └── package.json
 │
-├── server/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── config/
-│   └── server.js
+├── index.html
 │
-├── .env
-├── README.md
-└── package.json
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   └── images/
+│       └── instagram.png
+│
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+## Installation
 
-### 1. Clone the Repository
+1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/instagram-clone.git
+```
+
+2. Open the project folder
+
+```bash
 cd instagram-clone
 ```
 
-### 2. Install Dependencies
+3. Open `index.html` in your browser.
 
-#### Frontend
-
-```bash
-cd client
-npm install
-```
-
-#### Backend
-
-```bash
-cd ../server
-npm install
-```
-
-### 3. Configure Environment Variables
-
-Create a `.env` file inside the server directory:
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-```
-
-### 4. Run the Application
-
-#### Start Backend
-
-```bash
-npm run server
-```
-
-#### Start Frontend
-
-```bash
-npm start
-```
-
-The application will be available at:
-
-```bash
-Frontend: http://localhost:3000
-Backend:  http://localhost:5000
-```
+No additional setup is required.
 
 ---
 
-## 📸 Screenshots
+## Customization
 
-Add screenshots of your application here:
+### Change Story Images
 
-* Login Page
-* Home Feed
-* User Profile
-* Create Post
-* Comments Section
+Replace:
+
+```html
+<img src="https://i.pravatar.cc/100?img=1">
+```
+
+with your own image path.
+
+### Change Post Images
+
+Replace:
+
+```html
+<img src="https://picsum.photos/500/300?random=1">
+```
+
+with your own image URL or local image.
+
+### Change Logo
+
+Replace:
+
+```html
+assets/images/instragram.png
+```
+
+with your preferred logo image.
 
 ---
 
-## 🔐 API Endpoints
+## Responsive Breakpoints
 
-### Auth
-
-```http
-POST /api/auth/register
-POST /api/auth/login
-GET  /api/auth/user
-```
-
-### Users
-
-```http
-GET    /api/users/:id
-PUT    /api/users/update
-POST   /api/users/follow/:id
-DELETE /api/users/unfollow/:id
-```
-
-### Posts
-
-```http
-POST   /api/posts
-GET    /api/posts/feed
-GET    /api/posts/:id
-PUT    /api/posts/:id
-DELETE /api/posts/:id
-```
-
-### Comments
-
-```http
-POST   /api/comments/:postId
-DELETE /api/comments/:commentId
-```
+| Device  | Width   |
+| ------- | ------- |
+| Mobile  | ≤ 480px |
+| Tablet  | ≤ 768px |
+| Desktop | > 768px |
 
 ---
 
-## 🧪 Future Improvements
+## Future Improvements
 
-* Stories feature
-* Direct messaging
-* Notifications
-* Reels support
-* Real-time chat with WebSockets
 * Dark mode
-* Push notifications
+* Story viewer modal
+* Like button animation
+* Comment section
+* Post creation page
+* User profile page
+* JavaScript functionality
+* Backend integration
 
 ---
 
-## 🤝 Contributing
+## Author
 
-Contributions are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-
-```bash
-git checkout -b feature/new-feature
-```
-
-3. Commit changes
-
-```bash
-git commit -m "Add new feature"
-```
-
-4. Push to GitHub
-
-```bash
-git push origin feature/new-feature
-```
-
-5. Open a Pull Request
+Developed as a front-end practice project using HTML, CSS, and Bootstrap.
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License.
+This project is created for educational and learning purposes only.
 
----
-
-## ⭐ Acknowledgements
-
-* Inspired by Instagram
-* Built for learning full-stack web development
-* Thanks to the open-source community
+Instagram is a trademark of Meta Platforms, Inc. This project is not affiliated with or endorsed by Instagram.
