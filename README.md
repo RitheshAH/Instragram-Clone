@@ -1,5 +1,7 @@
 # Instagram Clone
 
+https://ritheshah.github.io/Instragram-Clone/
+
 A simple Instagram-inspired front-end UI built using **HTML**, **CSS**, **Bootstrap 5**, and **Bootstrap Icons**.
 
 This project recreates the basic Instagram mobile interface including:
