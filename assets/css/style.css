@@ -540,6 +540,9 @@ footer i {
         font-size: 16px;
         font-weight: 400;
     }
+    .sidebar-link img.profile-radius + span{
+        margin-left: -18px;
+    }
 
     .feed-layout {
         max-width: 975px;
@@ -552,5 +555,4 @@ footer i {
     padding: 15px;
     font-size: 22px;
     margin-left: -18px;
-
 }
