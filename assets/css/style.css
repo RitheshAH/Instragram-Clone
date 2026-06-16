@@ -12,29 +12,32 @@ html,
 body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
 body {
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #fff;
 }
 
+/* ================================
+   APP SHELL
+================================ */
+
 .app {
-    width: 420px;
+    width: 100%;
     height: 100vh;
     background: #fff;
-    position: relative;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 
-/* HEADER */
+/* ================================
+   MOBILE HEADER
+================================ */
 
-header {
-    position: absolute;
+.mobile-header {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -44,30 +47,42 @@ header {
     z-index: 1000;
 }
 
-header .navbar {
+.mobile-header .navbar {
     height: 60px;
 }
 
-/* MAIN */
+/* ================================
+   DESKTOP SIDEBAR (hidden on mobile)
+================================ */
 
-main {
-    position: absolute;
+.desktop-sidebar {
+    display: none;
+}
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+main.main-content {
+    position: fixed;
     top: 60px;
+    /* below mobile header */
     bottom: 60px;
+    /* above mobile footer */
     left: 0;
     right: 0;
-
     overflow-y: auto;
     overflow-x: hidden;
-
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
-/* FOOTER */
+/* ================================
+   MOBILE FOOTER
+================================ */
 
-footer {
-    position: absolute;
+.mobile-footer {
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -82,18 +97,43 @@ footer {
     border: none !important;
 }
 
-/* STORY */
+footer ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+footer i {
+    font-size: 24px;
+}
+
+/* ================================
+   STORIES
+================================ */
 
 .story-wrapper {
     display: flex;
     gap: 15px;
-    padding: 12px;
+    padding: 12px 16px;
     overflow-x: auto;
     border-bottom: 1px solid #ddd;
+    background: #fff;
 }
 
 .story-wrapper::-webkit-scrollbar {
     display: none;
+}
+
+.story-item {
+    flex-shrink: 0;
 }
 
 .story-circle {
@@ -101,11 +141,8 @@ footer {
     height: 68px;
     padding: 3px;
     border-radius: 50%;
-    background: linear-gradient(45deg,
-            #feda75,
-            #fa7e1e,
-            #d62976,
-            #962fbf);
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf);
+    margin: 0 auto 4px;
 }
 
 .story-circle img {
@@ -113,17 +150,30 @@ footer {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid white;
+    border: 2px solid #fff;
+    display: block;
 }
 
-/* POSTS */
+/* ================================
+   POSTS
+================================ */
 
-.card {
-    margin: 10px;
+.posts-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.post-card {
+    margin: 0 0 12px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
 }
 
 .card-header {
     background: #fff;
+    padding: 10px 12px;
 }
 
 .post-header {
@@ -143,12 +193,12 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 15px;
+    padding: 10px 12px;
 }
 
 .left-actions {
     display: flex;
-    gap: 18px;
+    gap: 16px;
 }
 
 .post-actions i {
@@ -157,14 +207,13 @@ footer {
 }
 
 .post-likes {
-    padding: 0 15px;
-    margin-bottom: 6px;
+    padding: 0 12px 6px;
     font-size: 14px;
     font-weight: 600;
 }
 
 .post-caption {
-    padding: 0 15px 15px;
+    padding: 0 12px 8px;
     font-size: 14px;
 }
 
@@ -175,43 +224,23 @@ footer {
     padding: 6px 14px;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
 }
 
-/* FOOTER ICONS */
+/* ================================
+   RIGHT SIDEBAR (desktop only)
+================================ */
 
-footer ul {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
+.right-sidebar {
+    display: none;
 }
 
-footer a {
-    color: #000;
-}
+/* ================================
+   MOBILE ADJUSTMENTS
+================================ */
 
-footer i {
-    font-size: 24px;
-}
-
-/* MOBILE */
-
-@media(max-width:768px) {
-
-    body {
-        background: #fff;
-    }
-
-    .app {
-        width: 100%;
-        height: 100vh;
-    }
-}
-
-@media(max-width:480px) {
-
+@media (max-width: 480px) {
     .story-circle {
         width: 55px;
         height: 55px;
@@ -228,4 +257,300 @@ footer i {
     footer i {
         font-size: 22px;
     }
+}
+
+/* ================================
+   DESKTOP LAYOUT (992px+)
+================================ */
+
+@media (min-width: 992px) {
+
+    body {
+        background: #fafafa;
+        overflow: hidden;
+    }
+
+    .app {
+        flex-direction: row;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Hide mobile header & footer */
+    .mobile-header,
+    .mobile-footer {
+        display: none !important;
+    }
+
+    /* ---- Desktop Sidebar ---- */
+    .desktop-sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 72px;
+        /* narrow icon rail — expand to 245px if you want labels */
+        min-height: 100vh;
+        background: #fff;
+        border-right: 1px solid #dbdbdb;
+        flex-shrink: 0;
+        padding: 8px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    /* Logo area */
+    .sidebar-logo {
+        padding: 16px 0 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .sidebar-logo a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    /* On narrow sidebar: show icon, hide full logo */
+    .sidebar-logo .logo-full {
+        display: none;
+    }
+
+    .sidebar-logo .logo-icon {
+        display: block;
+    }
+
+    /* Nav links */
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+        padding: 0 8px;
+    }
+
+    .sidebar-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* centred when icon-only */
+        gap: 16px;
+        width: 100%;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 26px;
+        color: #000;
+        text-decoration: none;
+        transition: background 0.15s;
+        padding: 0;
+    }
+
+    .sidebar-link span {
+        display: none;
+        /* hide labels on narrow sidebar */
+    }
+
+    .sidebar-link:hover {
+        background: #f0f0f0;
+    }
+
+    .sidebar-link.active {
+        font-weight: 700;
+    }
+
+    /* More button pinned to bottom */
+    .sidebar-bottom {
+        padding: 0 8px 16px;
+    }
+
+    /* ---- Main content ---- */
+    main.main-content {
+        position: static;
+        /* override the fixed positioning */
+        flex: 1;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        background: #fafafa;
+    }
+
+    /* ---- Feed layout (feed + right sidebar) ---- */
+    .feed-layout {
+        display: flex;
+        gap: 28px;
+        max-width: 935px;
+        width: 100%;
+        padding: 20px 0;
+        align-items: flex-start;
+    }
+
+    /* ---- Centre feed column ---- */
+    .feed-col {
+        width: 470px;
+        flex-shrink: 0;
+    }
+
+    .story-wrapper {
+        border: 1px solid #dbdbdb;
+        border-radius: 4px;
+        background: #fff;
+        margin-bottom: 16px;
+    }
+
+    .post-card {
+        border: 1px solid #dbdbdb !important;
+        border-radius: 4px !important;
+        margin-bottom: 16px;
+        background: #fff;
+    }
+
+    /* ---- Right sidebar ---- */
+    .right-sidebar {
+        display: block;
+        width: 320px;
+        flex-shrink: 0;
+        padding-top: 8px;
+        position: sticky;
+        top: 20px;
+    }
+
+    /* Profile row */
+    .rs-profile {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .rs-profile-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        font-size: 13px;
+    }
+
+    .rs-profile-info strong {
+        font-size: 14px;
+    }
+
+    .rs-profile-info span {
+        color: #737373;
+    }
+
+    .rs-switch {
+        font-size: 12px;
+        font-weight: 600;
+        color: #0095f6;
+        text-decoration: none;
+    }
+
+    /* Suggested header */
+    .rs-suggested-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: #737373;
+        font-weight: 600;
+    }
+
+    .rs-suggested-header a {
+        font-size: 12px;
+        font-weight: 600;
+        color: #262626;
+        text-decoration: none;
+    }
+
+    /* Suggested users */
+    .rs-suggested-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .rs-user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .rs-user-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        font-size: 12px;
+    }
+
+    .rs-user-info strong {
+        font-size: 13px;
+    }
+
+    .rs-user-info span {
+        color: #737373;
+    }
+
+    .rs-follow {
+        font-size: 12px;
+        font-weight: 600;
+        color: #0095f6;
+        text-decoration: none;
+    }
+
+    /* Footer links */
+    .rs-footer {
+        font-size: 11px;
+        color: #c7c7c7;
+        line-height: 1.6;
+    }
+}
+
+/* ================================
+   WIDE DESKTOP (1264px+) — show full sidebar with labels
+================================ */
+
+@media (min-width: 1264px) {
+
+    .desktop-sidebar {
+        width: 245px;
+        padding: 8px 12px;
+    }
+
+    .sidebar-logo .logo-full {
+        margin-left: -68px;
+        display: block;
+    }
+
+    .sidebar-logo .logo-icon {
+        display: none;
+    }
+
+    .sidebar-link {
+        justify-content: flex-start;
+        padding: 0 12px;
+        font-size: 22px;
+    }
+
+    .sidebar-link span {
+        display: inline;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .feed-layout {
+        max-width: 975px;
+    }
+}
+
+.profile-radius {
+    border-radius: 50%;
+    justify-content: flex-start;
+    padding: 15px;
+    font-size: 22px;
+    margin-left: -18px;
+
 }
